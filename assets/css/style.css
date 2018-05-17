@@ -1,0 +1,58 @@
+#titleblock {
+
+font-family: 'Exo 2', sans-serif;
+color: white;
+}
+
+#charimg1 {
+
+    padding: 20px;
+    border: solid green;
+
+}
+
+#charimg2 {
+
+    padding: 20px;
+    border: solid green;
+
+}
+
+body{
+    background: url(../images/background.jpg);
+    background-repeat: repeat;
+    background-blend-mode: lighten;
+}
+
+.content{
+    font-family: 'Exo 2', sans-serif;
+color: white;
+font-size: large;
+margin-left: 10px;
+}
+
+.fancy{
+    color: white;
+    font-size: xx-large;
+}
+
+#charimg3 {
+
+    padding: 20px;
+    border: solid green;
+
+}
+
+#charimg4 {
+
+    padding: 20px;
+    border: solid green;
+
+}
+
+#lukefinal{
+    padding: 20px;
+    border: solid green;
+
+}
+
