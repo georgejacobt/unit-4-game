@@ -11,6 +11,14 @@ color: white;
 
 }
 
+.charStyle {
+
+    padding: 20px;
+    border: solid green;
+    margin-left: 10px;
+
+}
+
 #charimg2 {
 
     padding: 20px;
