@@ -343,8 +343,24 @@ $(document).ready(function() {
 
         attack();
 
+        messages();
+
+     
+
  
     });
+
+ 
+    function messages (){
+        $("#gameMessage").css("display", "block");
+        $("#gameMessage2").css("display", "block");
+
+        $("#charmessage").text(defender);
+        $("#charHpMessage").text(charAttackPower);
+
+        $("#defMessage").text(defender);
+        $("#defHpMessage").text(defCounterAttack);
+    }
 
     function attack (){
 
@@ -414,23 +430,31 @@ $(document).ready(function() {
          
              if (defender === "obi"){
                $("#obi").remove();
+               $("#gameMessage").remove();
+              $("#gameMessage2").remove();
              $("#DefName").text("");  
              $("#DefHp").text("");
              }
              else if(defender === "luke"){
              $("#luke").remove();
+             $("#gameMessage").remove();
+             $("#gameMessage2").remove();
              $("#DefName").text("");  
              $("#DefHp").text("");
              }
              
              else if(defender === "darth"){
               $("#darth").remove();   
+              $("#gameMessage").remove();
+              $("#gameMessage2").remove();
               $("#DefName").text("");  
              $("#DefHp").text("");
              }
              
              else if (defender === "maul"){
                  $("#maul").remove();
+                 $("#gameMessage").remove();
+                 $("#gameMessage2").remove();
                  $("#darth").remove();   
                  $("#DefName").text("");  
                 $("#DefHp").text("");
