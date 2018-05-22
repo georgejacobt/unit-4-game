@@ -9,10 +9,18 @@ $(document).ready(function() {
     
     }
 
-    var obi = new GameChar("obi","../unit-4-game/assets/images/Obi_Wan-1.jpg",100,10,5);
-    var luke = new GameChar("luke", "../unit-4-game/assets/images/luke.jpg",200,20,10);
-    var darth = new GameChar("darth", "../unit-4-game/assets/images/Darth_Sidious.jpg",50,5,10);
-    var maul = new GameChar("maul", "../unit-4-game/assets/images/darthmaul.jpg",100,10,10);
+    var obi = new GameChar("obi","../unit-4-game/assets/images/Obi_Wan-1.jpg",100,3,25);
+    var luke = new GameChar("luke", "../unit-4-game/assets/images/luke.jpg",250,3,33);
+    var darth = new GameChar("darth", "../unit-4-game/assets/images/Darth_Sidious.jpg",100,5,10);
+    var maul = new GameChar("maul", "../unit-4-game/assets/images/darthmaul.jpg",100,6,25);
+
+
+
+    $("#obiHp").text(obi.healthPoints);
+    $("#lukeHp").text(luke.healthPoints);
+    $("#darthHp").text(darth.healthPoints);
+    $("#maulHp").text(maul.healthPoints);
+
 
   
 
@@ -22,26 +30,53 @@ $(document).ready(function() {
 
     let characterArray = ["obi","luke","darth","maul"];
     let character ="";
+    let characterImg ="";
+    let charHp ="";
 
     
 
 
-    $(".characters").on("click", function(){
+    $("#obi").on("click", function(){
 
         
-        character = $(this).attr("id");
+        character = obi.name;
+        characterImg = obi.image;
+        charHp = obi.healthPoints;
+        yourCharacter(character, characterImg);
+        enemyCharacters();
 
-     
-        let characterImg = $(this).attr("src");
+    });
+
+
+    $("#luke").on("click", function(){
+
         
+        character = luke.name;
+        characterImg = luke.image;
+        charHp = luke.healthPoints;
+        yourCharacter(character, characterImg);
+        enemyCharacters();
+
+    });
+
+
+    $("#darth").on("click", function(){
+
         
-        let index = characterArray.indexOf(character);
+        character = darth.name;
+        characterImg = darth.image;
+        charHp = darth.healthPoints;
+        yourCharacter(character, characterImg);
+        enemyCharacters();
 
-        characterArray.splice(index,1);
+    });
 
-        //console.log(character, characterImg );
-        //console.log(characterArray);
+    $("#maul").on("click", function(){
 
+        
+        character = maul.name;
+        characterImg = maul.image;
+        charHp = maul.healthPoints;
         yourCharacter(character, characterImg);
         enemyCharacters();
 
@@ -50,11 +85,20 @@ $(document).ready(function() {
     function yourCharacter(character, characterImg){
 
         var newImg = $("<img>");
+        $(".yourCharacter").css("display", "block");
+        $(".yourCharacter").css("display", "block");
+        
 
         newImg.attr("src", characterImg);
         newImg.attr("id", character);
-        newImg.attr("class", "charStyle");
-        $("#yourCharArea").append(newImg);
+        newImg.attr("class", "rounded");
+        newImg.attr("class", "float-left");
+        newImg.attr("class", "img-thumbnail");
+        newImg.attr("id", "yourCharacterBorder");
+
+        $(".yourCharacter").append(newImg);
+        $("#charName").text(character);
+        $("#charHp").text(charHp);
         $(".allChars").remove();
 
 
@@ -62,6 +106,7 @@ $(document).ready(function() {
 
         let charHealthPoints = 0;
         let charAttackPower = 0;
+        let charAttackPowerBase =0;
         let defHealthPoints = 0;
         let defCounterAttack = 0;
         let attackStart = false;
@@ -79,13 +124,20 @@ $(document).ready(function() {
         //newImg.attr("class", "enemyChar");
         $("#enemyAvailArea").append(newImg);
 
+       
+
         var newImg1 = $("<img>");
 
         newImg1.attr("src", darth.image);
         newImg1.attr("id", darth.name);
         newImg1.attr("class", "charStyle enemyChar");
        //newImg.attr("class", "enemyChar");
-        $("#enemyAvailArea").append(newImg1);
+        $("#enemyAvailArea").append(newImg1)
+
+        
+
+
+
 
         var newImg2 = $("<img>");
 
@@ -94,6 +146,9 @@ $(document).ready(function() {
         newImg2.attr("class", "charStyle enemyChar");
         //newImg.attr("class", "enemyChar");
         $("#enemyAvailArea").append(newImg2);
+
+        
+
 
 
        } else if (character === "luke"){
@@ -185,55 +240,98 @@ $(document).ready(function() {
 
     $(document).on("click",".enemyChar", function() {
         defender = ($(this).attr("id"));
+        console.log(defender);
        
         if (defenderSelect === false){
            if (defender === "obi"){
+             
              $( "#obi" ).remove();
              defenderSelect = true; 
 
              var newImg = $("<img>");
 
+       
+    
+        $(".defChar").css("display", "block");
+        $(".defChar").css("display", "block");
+        
+        newImg.attr("class", "rounded");
+        newImg.attr("class", "float-left");
+        newImg.attr("class", "img-thumbnail");
+        newImg.attr("id", "defCharBorder");
         newImg.attr("src", obi.image);
         newImg.attr("id", obi.name);
-        newImg.attr("class", "charStyle defender");
-        $("#defenderArea").append(newImg);
 
+        $(".defChar").append(newImg);
+        $("#DefName").text(obi.name);
+        $("#DefHp").text(obi.healthPoints);
+    
            }
         
         else if (defender === "luke"){
-           $("#luke").remove(); 
-           defenderSelect = true; 
-           
-           var newImg = $("<img>");
+            $( "#luke" ).remove();
+            defenderSelect = true; 
 
+            var newImg = $("<img>");
+
+      
+   
+       $(".defChar").css("display", "block");
+       $(".defChar").css("display", "block");
+       
+       newImg.attr("class", "rounded");
+       newImg.attr("class", "float-left");
+       newImg.attr("class", "img-thumbnail");
+       newImg.attr("id", "defCharBorder");
         newImg.attr("src", luke.image);
-        newImg.attr("id", luke.name);
-        newImg.attr("class", "charStyle defender");
-        $("#defenderArea").append(newImg);
+       newImg.attr("id", luke.name);
+       $(".defChar").append(newImg);
+       $("#DefName").text(luke.name);
+       $("#DefHp").text(luke.healthPoints);
         }
         
         else if (defender === "darth"){
-           $("#darth").remove();
-           defenderSelect = true;
+            $( "#darth" ).remove();
+            defenderSelect = true; 
 
-           var newImg = $("<img>");
+            var newImg = $("<img>");
 
+      
+   
+       $(".defChar").css("display", "block");
+       $(".defChar").css("display", "block");
+       
+       newImg.attr("class", "rounded");
+       newImg.attr("class", "float-left");
+       newImg.attr("class", "img-thumbnail");
+       newImg.attr("id", "defCharBorder");
         newImg.attr("src", darth.image);
-        newImg.attr("id", darth.name);
-        newImg.attr("class", "charStyle defender");
-        $("#defenderArea").append(newImg);
+       newImg.attr("id", darth.name);
+       $(".defChar").append(newImg);
+       $("#DefName").text(darth.name);
+       $("#DefHp").text(darth.healthPoints);
         }
         
         else if (defender === "maul"){
-           $("#maul").remove();
-           defenderSelect = true;
+            $( "#maul" ).remove();
+            defenderSelect = true; 
 
-           var newImg = $("<img>");
+            var newImg = $("<img>");
 
-        newImg.attr("src", maul.image);
-        newImg.attr("id", maul.name);
-        newImg.attr("class", "charStyle defender");
-        $("#defenderArea").append(newImg);
+       
+   
+       $(".defChar").css("display", "block");
+       $(".defChar").css("display", "block");
+       
+       newImg.attr("class", "rounded");
+       newImg.attr("class", "float-left");
+       newImg.attr("class", "img-thumbnail");
+       newImg.attr("id", "defCharBorder");
+       newImg.attr("src", maul.image);
+       newImg.attr("id", maul.name);
+       $(".defChar").append(newImg);
+       $("#DefName").text(maul.name);
+       $("#DefHp").text(maul.healthPoints);
         }
              
         }
@@ -254,18 +352,22 @@ $(document).ready(function() {
        if (character === "obi"){
              charHealthPoints = obi.healthPoints;
              charAttackPower = obi.attackPower;
+             charAttackPowerBase = obi.attackPower;
              attackStart = true;
         } else if (character === "luke") {
              charHealthPoints = luke.healthPoints;
              charAttackPower = luke.attackPower;
+             charAttackPowerBase = luke.attackPower;
              attackStart = true;
         } else if (character === "darth"){
              charHealthPoints = darth.healthPoints;
              charAttackPower = darth.attackPower;
+             charAttackPowerBase = darth.attackPower;
              attackStart = true;
         } else if (character === "maul"){
              charHealthPoints = maul.healthPoints;
              charAttackPower = maul.attackPower;
+             charAttackPowerBase = maul.attackPower;
              attackStart = true;
         }
 
@@ -293,7 +395,10 @@ $(document).ready(function() {
       if (charHealthPoints > 0 && defHealthPoints > 0){
        charHealthPoints = charHealthPoints - defCounterAttack;
         defHealthPoints = defHealthPoints - charAttackPower;
-        charAttackPower += charAttackPower;
+        charAttackPower = charAttackPower + charAttackPowerBase;
+        console.log("attack power -->"+" "+charAttackPower);
+        $("#charHp").text(charHealthPoints);
+        $("#DefHp").text(defHealthPoints);
         console.log(character+"--> "+"Health Points:"+" "+charHealthPoints);
         console.log(defender+"--> "+"Health Points:"+" "+defHealthPoints);
      }  else if (charHealthPoints <= 0){
@@ -307,15 +412,31 @@ $(document).ready(function() {
          attackStart = false;
          wins += 1;
          
-             if (defender === "obi")
-             $("#obi").remove();
-             else if(defender === "luke")
+             if (defender === "obi"){
+               $("#obi").remove();
+             $("#DefName").text("");  
+             $("#DefHp").text("");
+             }
+             else if(defender === "luke"){
              $("#luke").remove();
-             else if(defender === "darth")
-             $("#darth").remove();
-             else if (defender === "maul")
-             $("#maul").remove();
-     }
+             $("#DefName").text("");  
+             $("#DefHp").text("");
+             }
+             
+             else if(defender === "darth"){
+              $("#darth").remove();   
+              $("#DefName").text("");  
+             $("#DefHp").text("");
+             }
+             
+             else if (defender === "maul"){
+                 $("#maul").remove();
+                 $("#darth").remove();   
+                 $("#DefName").text("");  
+                $("#DefHp").text("");
+     } 
+             }
+            
 
      if (wins === 3){
          alert("AWESOME! YOU HAVE CONQURED ALL!!")

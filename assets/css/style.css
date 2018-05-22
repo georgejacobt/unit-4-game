@@ -14,7 +14,7 @@ color: white;
 .charStyle {
 
     padding: 20px;
-    border: solid green;
+    border: solid red;
     margin-left: 10px;
 
 }
@@ -64,3 +64,12 @@ margin-left: 10px;
 
 }
 
+#yourCharacterBorder{
+
+    border: solid blue;
+}
+
+#defCharBorder{
+
+    border: solid darkorange;
+}

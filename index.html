@@ -18,29 +18,111 @@
      <h1 id="titleblock" style="margin: 0 auto; text-align: right; padding-right: 200px; padding-top: 20px;">Star Wars RPG!</h1>
     
         <div class="row allChars" style="margin-left: 10px">
-            
-            <img id="obi" src="../unit-4-game/assets/images/Obi_Wan-1.jpg" class="characters rounded float-left img-thumbnail" alt="image not avail">              
-            <img id="luke" src="../unit-4-game/assets/images/luke.jpg" class="characters rounded float-left img-thumbnail" alt="image not avail">
-            <img id="darth" src="../unit-4-game/assets/images/Darth_Sidious.jpg" class="characters rounded float-left img-thumbnail" alt="image not avail">
-            <img id="maul" src="../unit-4-game/assets/images/darthmaul.jpg" class="characters rounded float-left img-thumbnail" alt="image not avail">
 
+            <div class="card text-white" id="obi">
+            <img src="../unit-4-game/assets/images/Obi_Wan-1.jpg" class="rounded float-left img-thumbnail" alt="image not avail">              
+            <div class="card-img-overlay">
+            <h5 class="card-title">Obi</h5>
+            <p class="card-text" id="obiHp" style="text-align: right; margin-top: 45px">120 </p>
+            </div>
+            </div>
+            <div class="card text-white characters" id="luke">
+            <img src="../unit-4-game/assets/images/luke.jpg" class="rounded float-left img-thumbnail" alt="image not avail">
+            <div class="card-img-overlay">
+            <h5 class="card-title">Luke</h5>
+            <p class="card-text" id="lukeHp" style="text-align: right; margin-top: 45px">120 </p>
+            </div>
+            </div>
+            <div class="card text-white characters" id="darth">
+            <img src="../unit-4-game/assets/images/Darth_Sidious.jpg" class="rounded float-left img-thumbnail" alt="image not avail">
+            <div class="card-img-overlay">
+            <h5 class="card-title">Darth</h5>
+            <p class="card-text" id="darthHp" style="text-align: right; margin-top: 45px">120 </p>
+            </div>
+            </div>
+            <div class="card text-white characters" id="maul">
+            <img src="../unit-4-game/assets/images/darthmaul.jpg" class="rounded float-left img-thumbnail" alt="image not avail">
+            <div class="card-img-overlay">
+            <h5 class="card-title">Maul</h5>
+            <p class="card-text" id="maulHp" style="text-align: right; margin-top: 45px">120 </p>
+            </div>
+            </div>
          </div>
             
 
             
                         
          <h1 class="content" id="chartext">Your Characater</h1>
-         <section1  id="yourCharArea"></section1>
+         <section1  id="yourCharArea">
+
+                <div class="card text-white characters yourCharacter" style="display: none; background: none; margin-left: 10px">
+                        
+                        <div class="card-img-overlay">
+                        <h5 class="card-title" id="charName"></h5>
+                        <p class="card-text" id="charHp" style="margin-left: 130px; margin-top: 40px"  ></p>
+                        </div>
+                        </div>
+
+
+         </section1>
 
          <h1 class="content" id="enemytext">Enemies Available to attack</h1>
-         <section2  id="enemyAvailArea"></section2>
+         <section2  id="enemyAvailArea">
+
+                <div class="card text-white characters obiChar" style="display: none; background: none; margin-left: 10px">
+                        
+                        <div class="card-img-overlay">
+                        <h5 class="card-title" id="obiCharName"></h5>
+                        <p class="card-text" id="obiCharHp" style="text-align: right; margin-top: 45px"  ></p>
+                        </div>
+                        </div>
+
+                        <div class="card text-white characters lukeChar" style="display: none; background: none; margin-left: 10px">
+                        
+                                <div class="card-img-overlay">
+                                <h5 class="card-title" id="lukeCharName"></h5>
+                                <p class="card-text" id="lukeCharHp" style="text-align: right; margin-top: 45px"  ></p>
+                                </div>
+                                </div>
+                        
+                        <div class="card text-white characters darthChar" style="display: none; background: none; margin-left: 10px">
+                        
+                                <div class="card-img-overlay">
+                                <h5 class="card-title" id="darthCharName"></h5>
+                                <p class="card-text" id="darthCharHp" style="text-align: right; margin-top: 45px"  ></p>
+                                </div>
+                                </div>        
+
+                         <div class="card text-white characters maulChar" style="display: none; background: none; margin-left: 10px">
+                        
+                                <div class="card-img-overlay">
+                                <h5 class="card-title" id="maulCharName"></h5>
+                                <p class="card-text" id="maulCharHp" style="text-align: right; margin-top: 45px"  ></p>
+                                </div>
+                                </div> 
+
+         </section2>
+
 
          <h1 class="content" id="fightsection">Fight Section</h1>
          <button type="button" class="btn btn-primary btn-sm" id="attackbtn" style="margin-left: 10px">Attack</button>
 
 
          <h1 class="content" id="defendertext">Defender</h1>
-         <section2  id="defenderArea"></section2>
+         <section2  id="defenderArea">
+
+                <div class="card text-white characters defChar" style="display: none; background: none; margin-left: 10px">
+                        
+                        <div class="card-img-overlay">
+                        <h5 class="card-title" id="DefName"></h5>
+                        <p class="card-text" id="DefHp" style="margin-left: 135px; margin-top: 40px"></p>
+                        </div>
+                        </div>
+
+
+
+
+         </section2>
 
   
 
