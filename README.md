@@ -54,11 +54,18 @@ If the 3D model stretch feature is to be attempted, it might require investment 
 * https://sketchfab.com/search?q=worker&sort_by=-pertinence&type=models
 * https://www.cgtrader.com/3d-models/sport
  
-### Key Personnel           
-Project manager: Jacob George
-Git Masterz: Jocelyn Tse
-Team: Karla Martinez,  Eleda Johnson, Jocelyn Tse , Jacob George
-Evaluation Committee: William Shepherd (Instructor), Paul Viola(TA), Michael Morfessis(TA)  
+### Key Personnel
+
+Name | Role(s)
+-----|--------
+Eleda Johnson | Team Member
+Karla Martinez | Team Member
+Jocelyn Tse | Git Master/Team Member
+Jacob George | Project Manager/Team Member
+William Shepheard | Instructor/Evaluator
+Paul Viola | TA
+Michael Morfessis | TA
+
  
 ### Evaluation
 Project evaluation will be
