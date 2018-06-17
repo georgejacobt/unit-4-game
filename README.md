@@ -28,7 +28,7 @@ Creating a central sporting registration hub that scales easily to demand is the
 ### Scope of Work
 Item | Description | Comments
 -----|-------------|---------
-Use of two APIs|Google Maps API, Weather API|(Stretch: Utilize Google Natural Language Processing API for embedded Chatbot)
+Use of two APIs|Google Maps API, Dark Sky Weather API|(Stretch: Utilize Google Natural Language Processing API for embedded Chatbot)
 Use AJAX to pull data|Yes |
 New Technology or Library|Materialize | Stretch: Three JS for 3D model embedment, Chat Bots embedment)
 Polished Front end| Yes, this will be wire framed prior to start |
